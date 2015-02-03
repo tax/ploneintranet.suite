@@ -36,3 +36,13 @@ Maneuver to
     [arguments]  ${title}
     Go to homepage
     Click link  jquery=a:contains("${title}")
+
+
+Login as
+    [arguments]  ${username}
+    Go to  ${PLONE_URL}/login
+    Page should contain element  __ac_name
+    Input text  __ac_name  ${username}
+    # Use secret as password
+    Input text  __ac_password  secret
+    Click Button  css=fieldset.button-bar button
